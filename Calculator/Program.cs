@@ -2,7 +2,7 @@ using System;
 
 namespace Calculator
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -95,31 +95,55 @@ namespace Calculator
 
         } //end of main
 
-        static double Addition(double first, double second)
+        public static double Addition(double first, double second)
         {
             return (first + second);
         }
 
-        static double Subtraction(double first, double second)
+        public static double Addition(double[] inputs)
+        {
+            int result = 0;
+            foreach(int number in inputs)
+            {
+                result += number;
+            }
+            return (result);
+        }
+
+        public static double Subtraction(double first, double second)
         {
             return (first - second);
         }
 
-        static double Multiplication(double first, double second)
+        public static double Subtraction(double[] inputs)
+        {
+            int result = 0;
+            foreach (int number in inputs)
+            {
+                result -= number;
+            }
+            return (result);
+        }
+
+        public static double Multiplication(double first, double second)
         {
             return (first * second);
         }
 
-        static double Division(double first, double second)
+        public static double Division(double first, double second)
         {
+            if (second == 0)
+            {
+                throw (new DivideByZeroException());
+            }
             return (first / second);
         }
 
-        static double Power(double first, double second)
+        public static double Power(double first, double second)
         {
             return (Math.Pow(first, second));
         }
-        static double Squareroot(double input)
+        public static double Squareroot(double input)
         {
             return (Math.Sqrt(input));
         }
